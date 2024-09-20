@@ -1,3 +1,7 @@
-export const TestButton = () => {
-    return <button>import</button>
+interface ITestButton {
+  label: string;
 }
+
+export const TestButton = ({ label }: ITestButton) => {
+  return <button>{label}</button>;
+};
