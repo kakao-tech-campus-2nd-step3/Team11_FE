@@ -25,7 +25,9 @@
     "paths": {
       "@/*": ["*"],
       "@images/*": ["assets/images/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@apis/*": ["apis/*"],
+      "@hooks/*": ["hooks/*"]
     },
     "allowSyntheticDefaultImports": true
   },
