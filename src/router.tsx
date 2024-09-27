@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
 
-import App from '@/App';
+import { Home } from '@/pages/Home';
 
 export const ROUTER_PATH = {
   ROOT: '/',
@@ -15,7 +15,7 @@ const PrivateRoute = (): React.ReactElement => {
 };
 
 export const router = createBrowserRouter([
-  { index: true, path: ROUTER_PATH.ROOT, element: <App /> },
+  { index: true, path: ROUTER_PATH.ROOT, element: <Home /> },
   {
     element: <PrivateRoute />,
     children: [
