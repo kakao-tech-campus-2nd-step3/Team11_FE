@@ -1,13 +1,13 @@
-import { Navigate, Outlet } from 'react-router';
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
+
 import App from '@/App';
 
-export const ROUTER_PATH = Object.freeze({
+export const ROUTER_PATH = {
   ROOT: '/',
   USER: '/user',
   NOT_FOUND: '*',
-});
+} as const;
 
 const PrivateRoute = (): React.ReactElement => {
   const auth = true;
