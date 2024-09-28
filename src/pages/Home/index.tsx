@@ -1,3 +1,4 @@
+import { HeroSection } from '@components/HeroSection';
 import { BasicLayout } from '@components/commons/BasicLayout';
 import { RoundedBox } from '@components/commons/RoundedBox';
 
@@ -6,8 +7,6 @@ import React from 'react';
 import { Box, Flex, Spacer, VStack } from '@chakra-ui/react';
 
 // TODO: 각 섹션 컴포넌트로
-
-const HeroSection: React.FC = () => <Box bg={'#4488FF'} height={300} />;
 
 const MainSection: React.FC = () => (
   <Flex h={492}>
