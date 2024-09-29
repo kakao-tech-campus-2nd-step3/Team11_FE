@@ -1,17 +1,12 @@
-부메랑 프론트엔드
+# Team11_FE
+11조 프론트엔드
 
-### Prerequisites
-    npm: >= 9.8.1
-    node: >= 18.18.0
+### Requirements
+    node >= 18.18.0
+    npm >= 9.8.1
 
-### How to Start
+### How To Start
 ```agsl
-cd my_folder
-git clone https://github.com/kakao-tech-campus-2nd-step3/Team11_FE.git
-```
-
-### Installation
-```agsl
-npm install
-npm run start
+    npm install
+    npm run start
 ```
