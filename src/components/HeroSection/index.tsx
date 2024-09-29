@@ -22,13 +22,13 @@ export const HeroSection: React.FC = () => {
           BOOMERANG{'<'}
         </Text>
 
-        <HeroHookBox />
+        <HeroKickBox />
       </VStack>
     </Box>
   );
 };
 
-const HeroHookBox = () => (
+const HeroKickBox = () => (
   <Box
     bg={white}
     padding={3}
