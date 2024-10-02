@@ -1,24 +1,24 @@
 import React from 'react';
 
+import { BoomerangColors } from '@/utils/colors';
 import { Box, Text, VStack } from '@chakra-ui/react';
 import HeroBannerBg from '@images/heroBg.svg?react';
 
 import styles from './index.module.css';
 
 const height = 300;
-const white = 'white';
 
 export const HeroSection: React.FC = () => {
   return (
-    <Box bg={'#4488FF'} height={height} className={styles.hero}>
+    <Box bg={BoomerangColors.blue} height={height} className={styles.hero}>
       <HeroBannerBg viewBox={`0 0 1024 ${height}`} />
       <VStack spacing={25} marginTop={75}>
-        <Text color={white} fontSize={'20px'}>
+        <Text color={BoomerangColors.white} fontSize={'20px'}>
           <b>전세사기 대응 가이드라인</b> 저희가 드릴게요!
         </Text>
 
         {/*TODO: 부메랑 로고로 변경*/}
-        <Text color={white} fontSize="26px">
+        <Text color={BoomerangColors.white} fontSize="26px">
           BOOMERANG{'<'}
         </Text>
 
@@ -30,7 +30,7 @@ export const HeroSection: React.FC = () => {
 
 const HeroKickBox = () => (
   <Box
-    bg={white}
+    bg={BoomerangColors.white}
     padding={3}
     width={530}
     textAlign="center"
