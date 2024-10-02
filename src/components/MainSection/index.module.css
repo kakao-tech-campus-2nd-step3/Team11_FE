@@ -1,0 +1,22 @@
+.review--header {
+    position: relative;
+    overflow: hidden;
+}
+
+.review--header>svg {
+    position: absolute;
+    transform: translate(250px, -20px) rotate(30deg) ;
+    animation: slide 4s ease-in-out infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(250px, -25px) rotate(25deg);
+    }
+    50% {
+        transform: translate(255px, -20px) rotate(30deg);
+    }
+    100% {
+        transform: translate(250px, -25px) rotate(25deg);
+    }
+}
