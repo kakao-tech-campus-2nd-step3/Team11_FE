@@ -21,7 +21,9 @@ export const LatestReviewBox = ({
     justifyContent="space-between"
   >
     <LightBlueCommentBox>
-      <Text whiteSpace="pre-line">{comment}</Text>
+      <Text whiteSpace="pre-line" fontWeight={600}>
+        {comment}
+      </Text>
     </LightBlueCommentBox>
     <SimpleUserProfile img={img} username={username} />
   </Flex>
