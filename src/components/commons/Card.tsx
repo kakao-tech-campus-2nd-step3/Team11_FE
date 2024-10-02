@@ -17,7 +17,7 @@ export const Card: React.FC = ({
 }: ICard) => (
   <Flex
     pl={10}
-    pr={4}
+    pr={10}
     alignItems="center"
     justifyContent={'space-between'}
     borderRadius={20}
