@@ -4,7 +4,7 @@ import { Flex } from '@chakra-ui/react';
 
 interface ICard {
   children: ReactNode;
-  height?: number;
+  h?: number;
   bg?: string;
   boxShadow?: string;
 }
@@ -12,7 +12,7 @@ interface ICard {
 export const Card: React.FC = ({
   children,
   bg = 'white',
-  height = 150,
+  h = 150,
   boxShadow = 'md',
 }: ICard) => (
   <Flex
@@ -22,7 +22,7 @@ export const Card: React.FC = ({
     justifyContent={'space-between'}
     borderRadius={20}
     bg={bg}
-    h={height}
+    h={h}
     boxShadow={boxShadow}
   >
     {children}
