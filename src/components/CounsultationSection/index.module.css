@@ -1,0 +1,67 @@
+/*@keyframes appear {*/
+/*    from {*/
+/*        opacity: 0;*/
+/*        scale: 0.5;*/
+/*    }*/
+/*    to {*/
+/*        opacity: 1;*/
+/*        scale: 1;*/
+/*    }*/
+/*}*/
+
+/*.block>* {*/
+/*    animation: appear linear;*/
+/*    animation-timeline:view();*/
+/*    animation-range: entry 0;*/
+/*}*/
+
+.block>* {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateY(20px);
+}
+
+.block>*.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.block>img:nth-child(4) {
+    transform: translate(-20px, -135px);
+}
+
+.block>img:nth-child(4).visible {
+    transform: translateY(-200px) rotate(3deg);
+    /*transform: rotate(3deg);*/
+}
+
+.block>button {
+    width: 400px;
+    height: 69px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    transform: translate(0px, -120px);
+    border-radius: 35px;
+}
+
+.block>button:hover {
+    transform: translate(0px, -123px) scale(105%);
+    background-color: #4488FF;
+}
+
+.block>button.visible {
+    /*transform: translate(0px, -120px);*/
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(0px, -120px);
+    }
+    50% {
+        transform: translate(0px, -125px);
+    }
+    100% {
+        transform: translate(0px, -120px);
+    }
+}
