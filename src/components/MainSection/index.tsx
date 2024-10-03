@@ -21,16 +21,19 @@ const categories: ICategoryBox[] = [
     category: '전세 피해 예방',
     example: 'EX.) 집이 위험한지 검사해드릴게요',
     img: home,
+    path: '/probe',
   },
   {
     category: '대처 가이드라인',
     example: 'EX.) 보험은 있어요',
     img: info,
+    path: '/guideline',
   },
   {
     category: '집이 경매에 넘어갔다면',
     example: 'EX.) 보험이 없어요',
     img: wash,
+    path: '/help',
   },
 ];
 

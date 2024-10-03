@@ -1,6 +1,5 @@
-import { Card } from '@components/commons/Card';
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Text, VStack } from '@chakra-ui/react';
 
@@ -10,11 +9,12 @@ export interface ICategoryBox {
   category: string;
   example: string;
   img: string;
+  path: string;
 }
 
-export const CategoryBox = ({ category, example, img }: ICategoryBox) => {
+export const CategoryBox = ({ category, example, img, path }: ICategoryBox) => {
   return (
-    <Card className={styles['category--box']}>
+    <Link className={styles['category--box']} to={path}>
       <VStack spacing={4} alignItems="space-between">
         <Text fontWeight={900} fontSize="20px">
           {category}
@@ -24,6 +24,6 @@ export const CategoryBox = ({ category, example, img }: ICategoryBox) => {
         </Text>
       </VStack>
       <img alt="category image" src={img} />
-    </Card>
+    </Link>
   );
 };

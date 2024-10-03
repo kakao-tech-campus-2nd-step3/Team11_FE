@@ -59,6 +59,14 @@
 .category--box {
     cursor: pointer;
     transition: transform .3s ease-in-out;
+    background-color: #FFFFFF;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    height: 150px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);;
 }
 
 .category--box>img {
