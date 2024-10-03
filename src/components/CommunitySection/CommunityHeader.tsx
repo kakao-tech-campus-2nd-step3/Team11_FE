@@ -3,6 +3,7 @@ import React from 'react';
 import { BoomerangColors } from '@/utils/colors';
 import { Flex, Text } from '@chakra-ui/react';
 import CommunityIcon from '@images/community.svg?react';
+import House from '@images/house.svg?react';
 import Note from '@images/note.svg?react';
 
 import styles from './index.module.css';
@@ -22,6 +23,6 @@ export const CommunityHeader = () => (
       커뮤니티
     </Text>
     <CommunityIcon />
-    <Note />
+    <House opacity={0.2} />
   </Flex>
 );

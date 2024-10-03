@@ -49,13 +49,13 @@
 
 @keyframes floating {
     0% {
-        transform: translate(190px, -30px) rotate(85deg);
+        transform: translate(190px, -30px) rotate(-5deg);
     }
     50% {
-        transform: translate(205px, -25px) rotate(90deg);
+        transform: translate(195px, -25px) rotate(0deg);
     }
     100% {
-        transform: translate(190px, -30px) rotate(85deg);
+        transform: translate(190px, -30px) rotate(-5deg);
     }
 }
 
