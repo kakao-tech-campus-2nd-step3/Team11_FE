@@ -14,7 +14,7 @@ import styles from './index.module.css';
 export const ConsultationSection: React.FC = () => {
   const imageRefs = useRef<HTMLImageElement[]>([]);
 
-  useIntersectionObserver(imageRefs, 0.5, '0px 0px -30% 0px');
+  useIntersectionObserver(imageRefs, 0.5, '10% 0px -15% 0px');
 
   const setImageRefAtIndex =
     (index: number) => (el: HTMLImageElement | null) => {
