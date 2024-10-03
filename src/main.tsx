@@ -20,6 +20,7 @@ const theme = extendTheme({
       'html, body': {
         bg: '#EDEDED',
         fontFamily: 'NanumSquareOTF_ac, sans-serif',
+        fontDisplay: 'swap',
       },
       '@font-face': [
         {
