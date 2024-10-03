@@ -38,3 +38,24 @@
         transform: translate(260px, 70px);
     }
 }
+
+.community--header {
+    overflow: hidden;
+}
+
+.community--header>svg:last-child {
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(190px, -30px) rotate(85deg);
+    }
+    50% {
+        transform: translate(205px, -25px) rotate(90deg);
+    }
+    100% {
+        transform: translate(190px, -30px) rotate(85deg);
+    }
+}
+
