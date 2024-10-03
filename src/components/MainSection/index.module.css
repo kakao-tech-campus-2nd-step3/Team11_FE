@@ -22,24 +22,41 @@
 }
 
 .jump {
-    transition: transform .35s;
+    transition: transform .3s;
     animation: jump ease-in-out 4s infinite;
 }
 
 .jump:hover {
     animation: paused;
-    transform: scale(1.1);
+    transform: scale(1.05) translateY(-5px);
 }
 
 @keyframes jump {
     0% {
-        transform: translateY(0px);
+        transform: translate(0px, 0px);
     }
     50% {
-        transform: translateY(-5px);
+        transform: translate(-2px, -5px);
     }
     100% {
-        transform: translateY(0px);
+        transform: translate(0px, 0px);
     }
 
+}
+
+.category--box {
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+}
+
+.category--box>img {
+    transition: transform .3s ease-in-out;
+}
+
+.category--box:hover {
+    transform: translate(0px, -5px);
+}
+
+.category--box:hover>img {
+    transform: scale(110%);
 }

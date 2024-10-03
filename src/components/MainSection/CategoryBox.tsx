@@ -4,6 +4,8 @@ import React from 'react';
 
 import { Text, VStack } from '@chakra-ui/react';
 
+import styles from './index.module.css';
+
 export interface ICategoryBox {
   category: string;
   example: string;
@@ -12,7 +14,7 @@ export interface ICategoryBox {
 
 export const CategoryBox = ({ category, example, img }: ICategoryBox) => {
   return (
-    <Card>
+    <Card className={styles['category--box']}>
       <VStack spacing={4} alignItems="space-between">
         <Text fontWeight={900} fontSize="20px">
           {category}

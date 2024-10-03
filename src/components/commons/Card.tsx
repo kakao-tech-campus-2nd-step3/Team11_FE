@@ -7,6 +7,7 @@ interface ICard {
   h?: number;
   bg?: string;
   boxShadow?: string;
+  className?: string;
 }
 
 export const Card: React.FC = ({
@@ -14,6 +15,7 @@ export const Card: React.FC = ({
   bg = 'white',
   h = 150,
   boxShadow = 'md',
+  className = undefined,
 }: ICard) => (
   <Flex
     pl={10}
@@ -24,6 +26,7 @@ export const Card: React.FC = ({
     bg={bg}
     h={h}
     boxShadow={boxShadow}
+    className={className}
   >
     {children}
   </Flex>
