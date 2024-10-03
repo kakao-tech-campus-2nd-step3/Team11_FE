@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 
+import styles from './index.module.css';
+
 export interface ILatestReviewBox {
   comment: string;
   img: string;
@@ -42,6 +44,8 @@ const LightBlueCommentBox: React.FC<{ children: ReactNode }> = ({
     borderTopLeftRadius={1}
     pl={10}
     pr={10}
+    className={styles.jump}
+    style={{ animationDelay: `${Math.random().toFixed(1)}s` }} // 딜레이 설정
   >
     {children}
   </Flex>

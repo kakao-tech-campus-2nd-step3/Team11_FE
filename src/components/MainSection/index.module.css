@@ -20,3 +20,26 @@
         transform: translate(250px, -25px) rotate(25deg);
     }
 }
+
+.jump {
+    transition: transform .35s;
+    animation: jump ease-in-out 4s infinite;
+}
+
+.jump:hover {
+    animation: paused;
+    transform: scale(1.1);
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+
+}
