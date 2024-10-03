@@ -1,0 +1,40 @@
+.community--banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.community--banner svg {
+    position: absolute;
+}
+
+.community--banner svg:first-child  {
+    animation: slideSpeaker 4s ease-in-out infinite;
+}
+
+@keyframes slideSpeaker {
+    0% {
+        transform: translate(0px, 30px) rotate(0deg) ;
+    }
+    50% {
+        transform: translate(5px, 32px) rotate(3deg) ;
+    }
+    100% {
+        transform: translate(0px, 30px) rotate(0deg) ;
+    }
+}
+
+.community--banner svg:last-child {
+    animation: slideCommentBubble 4s ease-in-out infinite;
+}
+
+@keyframes slideCommentBubble {
+    0% {
+        transform: translate(260px, 70px);
+    }
+    50% {
+        transform: translate(260px, 75px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(260px, 70px);
+    }
+}
