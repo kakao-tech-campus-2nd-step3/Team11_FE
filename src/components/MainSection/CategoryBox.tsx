@@ -14,7 +14,7 @@ export const CategoryBox = ({ category, example, img }: ICategoryBox) => {
   return (
     <Card>
       <VStack spacing={4} alignItems="space-between">
-        <Text as="b" fontSize="20px">
+        <Text fontWeight={900} fontSize="20px">
           {category}
         </Text>
         <Text color={'#888888'} fontSize="15px" whiteSpace="nowrap">

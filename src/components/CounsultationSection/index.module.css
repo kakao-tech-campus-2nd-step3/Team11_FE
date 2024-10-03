@@ -50,7 +50,6 @@
 }
 
 .block>button.visible {
-    /*transform: translate(0px, -120px);*/
     animation: bounce 2s ease-in-out infinite;
 }
 

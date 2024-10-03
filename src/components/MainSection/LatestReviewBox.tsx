@@ -23,7 +23,7 @@ export const LatestReviewBox = ({
     justifyContent="space-between"
   >
     <LightBlueCommentBox>
-      <Text whiteSpace="pre-line" fontWeight={600}>
+      <Text whiteSpace="pre-line" fontWeight={700}>
         {comment}
       </Text>
     </LightBlueCommentBox>

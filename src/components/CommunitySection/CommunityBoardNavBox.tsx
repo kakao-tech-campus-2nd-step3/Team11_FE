@@ -17,10 +17,10 @@ export const CommunityBoardNavBox: React.FC = ({
   <Box w={230} h={283} bg={'#F3F3F3'} borderRadius={20} boxShadow="md">
     <Box bg={BoomerangColors.blue} h={26} borderTopRadius={20} mb="26px" />
     <Box pl={7} pr={7}>
-      <Text color={'#1C6BF5'} fontSize="22px" fontWeight={700}>
+      <Text color={'#1C6BF5'} fontSize="22px" fontWeight={900}>
         {type}
       </Text>
-      <Text whiteSpace="pretty" color={'#3F3F3F'} fontSize="15px" mb={4}>
+      <Text whiteSpace="pre-line" color={'#3F3F3F'} fontSize="15px" mb={4}>
         {desc}
       </Text>
       <Image alt="image of each board" objectFit="none" src={img} m="0 auto" />

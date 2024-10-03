@@ -12,21 +12,25 @@ export const HeroSection: React.FC = () => {
   return (
     <Box bg={BoomerangColors.blue} height={height} className={styles.hero}>
       <HeroBannerBg viewBox={`0 0 1024 ${height}`} />
-      <VStack spacing={25} marginTop={75}>
+      <VStack spacing={5} marginTop={75}>
         <Text color={BoomerangColors.white} fontSize={'20px'}>
           <b>전세사기 대응 가이드라인</b> 저희가 드릴게요!
         </Text>
-
-        {/*TODO: 부메랑 로고로 변경*/}
-        <Text color={BoomerangColors.white} fontSize="26px">
-          BOOMERANG{'<'}
-        </Text>
-
+        <BoomerangLogo />
         <HeroKickBox />
       </VStack>
     </Box>
   );
 };
+
+const BoomerangLogo: React.FC = () => (
+  <Text color={BoomerangColors.white} fontSize="40px" fontWeight={900}>
+    BOOMERANG
+    <Text as="sup" fontSize="40px">
+      {'<'}
+    </Text>
+  </Text>
+);
 
 const HeroKickBox = () => (
   <Box
@@ -37,6 +41,8 @@ const HeroKickBox = () => (
     borderRadius={34}
     borderTopRightRadius={1}
   >
-    <Text fontSize="28px">전세 사기를 당했어요! 어떻게 하죠?😢</Text>
+    <Text fontWeight={700} fontSize="30px">
+      전세 사기를 당했어요! 어떻게 하죠?😢
+    </Text>
   </Box>
 );
