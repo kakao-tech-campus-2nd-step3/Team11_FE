@@ -44,6 +44,18 @@
 
 }
 
+@keyframes float {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -5px);
+    }
+    0% {
+        transform: translate(0px, 0px);
+    }
+}
+
 .category--box {
     cursor: pointer;
     transition: transform .3s ease-in-out;
@@ -58,5 +70,5 @@
 }
 
 .category--box:hover>img {
-    transform: scale(110%);
+    animation: float 2s infinite;
 }
