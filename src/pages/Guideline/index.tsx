@@ -1,4 +1,5 @@
 import { BasicLayout } from '@components/commons/BasicLayout';
+import { PropH } from '@components/commons/types';
 
 import React from 'react';
 
@@ -27,15 +28,13 @@ export const Guideline = () => (
   </BasicLayout>
 );
 
-const GuidelineProgressBar: React.FC<{ h: number }> = ({ h }) => (
+const GuidelineProgressBar: React.FC<PropH> = ({ h }) => (
   <Box className={styles.guideline} h={h} bg={'#176CFF'} borderRadius={22}>
     <ProgressBg opacity={0.12} />
   </Box>
 );
 
-const GuidelineSaveButton: React.FC<{
-  h: number;
-}> = ({ h }) => (
+const GuidelineSaveButton: React.FC<PropH> = ({ h }) => (
   <Button
     w={266}
     bg={'#176CFF'}
@@ -50,13 +49,13 @@ const GuidelineSaveButton: React.FC<{
   </Button>
 );
 
-const GuidelineChecklist: React.FC<{ h: number }> = ({ h }) => (
+const GuidelineChecklist: React.FC<PropH> = ({ h }) => (
   <Box boxShadow={'xl'} h={h} bg={BoomerangColors.white} borderRadius={38}>
     전세사기 대응을 위한 필요서류들을 확인해주세요
   </Box>
 );
 
-const GuidelineWarning: React.FC<{ h: number }> = ({ h }) => (
+const GuidelineWarning: React.FC<PropH> = ({ h }) => (
   <Box
     borderRadius={38}
     bg={BoomerangColors.white}
@@ -68,7 +67,7 @@ const GuidelineWarning: React.FC<{ h: number }> = ({ h }) => (
   </Box>
 );
 
-const GuidelineNavHelp: React.FC<{ h: number }> = ({ h }) => (
+const GuidelineNavHelp: React.FC<PropH> = ({ h }) => (
   <Box
     borderRadius={38}
     bg={BoomerangColors.white}
@@ -80,13 +79,13 @@ const GuidelineNavHelp: React.FC<{ h: number }> = ({ h }) => (
   </Box>
 );
 
-const GuidelineStatistics: React.FC<{ h: number }> = ({ h }) => (
+const GuidelineStatistics: React.FC<PropH> = ({ h }) => (
   <Box bg={BoomerangColors.white} h={h} borderRadius={45}>
     2단계 임차권 등기 명령 과정에서 부메랑 사용 평균 2주 감소 되었어요!
   </Box>
 );
 
-const GuidelineCloseBanner: React.FC<{ h: number }> = ({ h }) => (
+const GuidelineCloseBanner: React.FC<PropH> = ({ h }) => (
   <Box bg={BoomerangColors.white} borderRadius={13} h={h}>
     당신은 혼자가 아닙니다, 부메랑과 함께라면 해결할 수 있어요!
   </Box>

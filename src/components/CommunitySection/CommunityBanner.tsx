@@ -1,3 +1,5 @@
+import { PropH } from '@components/commons/types';
+
 import React from 'react';
 
 import { BoomerangColors } from '@/utils/colors';
@@ -7,10 +9,10 @@ import Speaker from '@images/speaker.svg?react';
 
 import styles from './index.module.css';
 
-export const CommunityBanner: React.FC = () => (
+export const CommunityBanner: React.FC<PropH> = ({ h }) => (
   <Flex
     bg={'#176CFF'}
-    h={250}
+    h={h}
     pl={70}
     alignItems="center"
     className={styles['community--banner']}

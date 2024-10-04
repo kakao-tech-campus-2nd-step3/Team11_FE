@@ -1,17 +1,18 @@
+import { PropH } from '@components/commons/types';
+
 import React from 'react';
 
 import { BoomerangColors } from '@/utils/colors';
 import { Flex, Text } from '@chakra-ui/react';
 import CommunityIcon from '@images/community.svg?react';
 import House from '@images/house.svg?react';
-import Note from '@images/note.svg?react';
 
 import styles from './index.module.css';
 
-export const CommunityHeader = () => (
+export const CommunityHeader: React.FC<PropH> = ({ h }) => (
   <Flex
     bg={BoomerangColors.blue}
-    h={75}
+    h={h}
     borderTopRadius={11}
     pl="45px"
     mb={30}

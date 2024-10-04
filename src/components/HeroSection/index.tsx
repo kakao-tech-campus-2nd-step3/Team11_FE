@@ -1,3 +1,5 @@
+import { PropH } from '@components/commons/types';
+
 import React from 'react';
 
 import { BoomerangColors } from '@/utils/colors';
@@ -6,7 +8,7 @@ import HeroBannerBg from '@images/heroBg.svg?react';
 
 import styles from './index.module.css';
 
-export const HeroSection: React.FC<{ h: number }> = ({ h }) => {
+export const HeroSection: React.FC<PropH> = ({ h }) => {
   return (
     <Box bg={BoomerangColors.blue} h={h} className={styles.hero}>
       <HeroBannerBg viewBox={`0 0 1024 ${h}`} />
