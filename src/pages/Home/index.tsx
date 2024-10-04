@@ -10,7 +10,7 @@ import { Box, Spacer, VStack } from '@chakra-ui/react';
 
 export const Home: React.FC = () => {
   return (
-    <BasicLayout>
+    <BasicLayout maxW={1024}>
       <VStack spacing={10} align="stretch">
         <HeroSection />
         <MainSection />
