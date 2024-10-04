@@ -1,5 +1,7 @@
 import { useIntersectionObserver } from '@hooks/useIntersectionObserver';
 
+import { PropH } from '@components/commons/types';
+
 import React, { useRef } from 'react';
 
 import { BoomerangColors } from '@/utils/colors';
@@ -11,7 +13,7 @@ import consult4 from '@images/consult4.svg';
 
 import styles from './index.module.css';
 
-export const ConsultationSection: React.FC = () => {
+export const ConsultationSection: React.FC<PropH> = ({ h }) => {
   const imageRefs = useRef<HTMLImageElement[]>([]);
 
   useIntersectionObserver(imageRefs, 0.5, '10% 0px -15% 0px');
@@ -25,7 +27,7 @@ export const ConsultationSection: React.FC = () => {
 
   return (
     <VStack
-      h={470}
+      h={h}
       bg={BoomerangColors.white}
       boxShadow="md"
       borderRadius={20}

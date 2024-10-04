@@ -5,6 +5,7 @@ import {
   LatestReviewBox,
 } from '@components/MainSection/LatestReviewBox';
 import { LatestReviews } from '@components/MainSection/LatestReviews';
+import { PropH } from '@components/commons/types';
 
 import React from 'react';
 
@@ -56,8 +57,8 @@ const reviews: ILatestReviewBox[] = [
   },
 ];
 
-export const MainSection: React.FC = () => (
-  <Flex h={492}>
+export const MainSection: React.FC<PropH> = ({ h }) => (
+  <Flex h={h}>
     <Categories flex={0.377}>
       {categories.map((category) => (
         <CategoryBox key={category.category} {...category} />

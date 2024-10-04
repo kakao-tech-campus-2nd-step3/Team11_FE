@@ -12,10 +12,10 @@ export const Home: React.FC = () => {
   return (
     <BasicLayout maxW={1024}>
       <VStack spacing={10} align="stretch">
-        <HeroSection />
-        <MainSection />
-        <ConsultationSection />
-        <CommunitySection />
+        <HeroSection h={300} />
+        <MainSection h={492} />
+        <ConsultationSection h={470} />
+        <CommunitySection h={700} />
         <Spacer />
       </VStack>
     </BasicLayout>

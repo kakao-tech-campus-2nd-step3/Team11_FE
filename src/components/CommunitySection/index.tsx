@@ -4,6 +4,7 @@ import {
   ICommunityBoardNavBox,
 } from '@components/CommunitySection/CommunityBoardNavBox';
 import { CommunityHeader } from '@components/CommunitySection/CommunityHeader';
+import { PropH } from '@components/commons/types';
 
 import React from 'react';
 
@@ -14,7 +15,7 @@ import local from '@images/local.svg';
 import shush from '@images/shush.svg';
 import steps from '@images/steps.svg';
 
-const boards: ICommunityBoardNavBox[] = [
+const boards = [
   {
     type: '자유게시판',
     desc: '다른 사람들과 자유롭게\n 소통해요!',
@@ -35,15 +36,15 @@ const boards: ICommunityBoardNavBox[] = [
     desc: '나와 같은 상황과 단계를\n 갖는 사람들과 소통해요!',
     img: steps,
   },
-];
+] as ICommunityBoardNavBox[];
 
-export const CommunitySection: React.FC = () => (
-  <Box h={700} bg={BoomerangColors.white} borderRadius={20}>
-    <CommunityHeader />
-    <CommunityBanner />
+export const CommunitySection: React.FC<PropH> = ({ h }) => (
+  <Box h={h} bg={BoomerangColors.white} borderRadius={20}>
+    <CommunityHeader h={75} />
+    <CommunityBanner h={250} />
     <Flex mt={35} pl={8} pr={8} justifyContent="space-between">
       {boards.map((board) => (
-        <CommunityBoardNavBox key={board.type} {...board} />
+        <CommunityBoardNavBox key={board.type} h={283} {...board} />
       ))}
     </Flex>
   </Box>

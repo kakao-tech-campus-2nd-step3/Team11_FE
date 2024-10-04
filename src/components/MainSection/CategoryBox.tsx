@@ -14,7 +14,11 @@ export interface ICategoryBox {
 
 export const CategoryBox = ({ category, example, img, path }: ICategoryBox) => {
   return (
-    <Link className={styles['category--box']} to={path}>
+    <Link
+      className={styles['category--box']}
+      to={path}
+      preventScrollReset={true}
+    >
       <VStack spacing={4} alignItems="space-between">
         <Text fontWeight={900} fontSize="20px">
           {category}
