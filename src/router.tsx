@@ -1,11 +1,13 @@
 import React from 'react';
 import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
 
+import { Guideline } from '@/pages/Guideline';
 import { Home } from '@/pages/Home';
 
 export const ROUTER_PATH = {
   ROOT: '/',
   USER: '/user',
+  GUIDELINE: '/guideline',
   NOT_FOUND: '*',
 } as const;
 
@@ -16,6 +18,7 @@ const PrivateRoute = (): React.ReactElement => {
 
 export const router = createBrowserRouter([
   { index: true, path: ROUTER_PATH.ROOT, element: <Home /> },
+  { path: ROUTER_PATH.GUIDELINE, element: <Guideline /> },
   {
     element: <PrivateRoute />,
     children: [

@@ -1,0 +1,20 @@
+@keyframes floatrotate {
+    0% {
+        transform: translate(145px, -50px);
+    }
+    50% {
+        transform: translate(150px, -45px);
+    }
+    100% {
+        transform: translate(145px, -50px);
+    }
+}
+
+.guideline {
+    overflow: hidden;
+}
+
+.guideline>svg {
+    animation: floatrotate 4s ease-in-out infinite;
+    /*transform: translate(145px, -50px);*/
+}
