@@ -37,8 +37,8 @@ const boards: ICommunityBoardNavBox[] = [
   },
 ];
 
-export const CommunitySection: React.FC = () => (
-  <Box h={700} bg={BoomerangColors.white} borderRadius={20}>
+export const CommunitySection: React.FC<{ h: number }> = ({ h }) => (
+  <Box h={h} bg={BoomerangColors.white} borderRadius={20}>
     <CommunityHeader />
     <CommunityBanner />
     <Flex mt={35} pl={8} pr={8} justifyContent="space-between">

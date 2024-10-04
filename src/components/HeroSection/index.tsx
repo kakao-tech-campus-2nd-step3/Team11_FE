@@ -6,12 +6,10 @@ import HeroBannerBg from '@images/heroBg.svg?react';
 
 import styles from './index.module.css';
 
-const height = 300;
-
-export const HeroSection: React.FC = () => {
+export const HeroSection: React.FC<{ h: number }> = ({ h }) => {
   return (
-    <Box bg={BoomerangColors.blue} height={height} className={styles.hero}>
-      <HeroBannerBg viewBox={`0 0 1024 ${height}`} />
+    <Box bg={BoomerangColors.blue} h={h} className={styles.hero}>
+      <HeroBannerBg viewBox={`0 0 1024 ${h}`} />
       <VStack spacing={5} marginTop={75}>
         <Text color={BoomerangColors.white} fontSize={'20px'}>
           <b>전세사기 대응 가이드라인</b> 저희가 드릴게요!

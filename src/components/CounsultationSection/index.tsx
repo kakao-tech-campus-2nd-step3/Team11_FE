@@ -11,7 +11,7 @@ import consult4 from '@images/consult4.svg';
 
 import styles from './index.module.css';
 
-export const ConsultationSection: React.FC = () => {
+export const ConsultationSection: React.FC<{ h: number }> = ({ h }) => {
   const imageRefs = useRef<HTMLImageElement[]>([]);
 
   useIntersectionObserver(imageRefs, 0.5, '10% 0px -15% 0px');
@@ -25,7 +25,7 @@ export const ConsultationSection: React.FC = () => {
 
   return (
     <VStack
-      h={470}
+      h={h}
       bg={BoomerangColors.white}
       boxShadow="md"
       borderRadius={20}

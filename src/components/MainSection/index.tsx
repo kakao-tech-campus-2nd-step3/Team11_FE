@@ -56,8 +56,8 @@ const reviews: ILatestReviewBox[] = [
   },
 ];
 
-export const MainSection: React.FC = () => (
-  <Flex h={492}>
+export const MainSection: React.FC<{ h: number }> = ({ h }) => (
+  <Flex h={h}>
     <Categories flex={0.377}>
       {categories.map((category) => (
         <CategoryBox key={category.category} {...category} />
