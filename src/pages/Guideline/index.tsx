@@ -11,7 +11,7 @@ import styles from './index.module.css';
 
 export const Guideline = () => (
   <BasicLayout maxW={1015}>
-    <VStack spacing={10} align="stretch">
+    <VStack spacing={10} align="stretch" mb={40}>
       <Spacer />
       <GuidelineProgressBar h={264} />
       <GuidelineSaveButton h={85} />
@@ -22,8 +22,6 @@ export const Guideline = () => (
       </Flex>
       <GuidelineStatistics h={652} />
       <GuidelineCloseBanner h={302} />
-      <Spacer />
-      <Spacer />
     </VStack>
   </BasicLayout>
 );
@@ -50,8 +48,12 @@ const GuidelineSaveButton: React.FC<PropH> = ({ h }) => (
 );
 
 const GuidelineChecklist: React.FC<PropH> = ({ h }) => (
-  <Box boxShadow={'xl'} h={h} bg={BoomerangColors.white} borderRadius={38}>
-    전세사기 대응을 위한 필요서류들을 확인해주세요
+  <Box boxShadow="xl" h={h} bg={BoomerangColors.white} borderRadius={38}>
+    <Box bg={'#2D79FF'} h={139} lineHeight={`${139}px`} borderTopRadius={36}>
+      <Text textAlign="center" fontSize="40px" color={BoomerangColors.white}>
+        전세사기 대응을 위한 필요서류들을 확인해주세요!
+      </Text>
+    </Box>
   </Box>
 );
 
@@ -86,7 +88,26 @@ const GuidelineStatistics: React.FC<PropH> = ({ h }) => (
 );
 
 const GuidelineCloseBanner: React.FC<PropH> = ({ h }) => (
-  <Box bg={BoomerangColors.white} borderRadius={13} h={h}>
-    당신은 혼자가 아닙니다, 부메랑과 함께라면 해결할 수 있어요!
-  </Box>
+  <Flex
+    bg={'#2D79FF'}
+    borderRadius={13}
+    h={h}
+    justifyContent="center"
+    flexDirection="column"
+    pl={16}
+  >
+    <Text
+      whiteSpace="pre-line"
+      color={BoomerangColors.white}
+      fontSize="48px"
+      fontWeight={900}
+    >
+      당신은 혼자가 아닙니다,
+      <br />
+      부메랑과 함께라면 해결할 수 있어요!
+    </Text>
+    <Text fontSize="32px" color={'#8FB8FF'}>
+      전세금을 지키고 되찾는 길, 부메랑이 함께해요.
+    </Text>
+  </Flex>
 );
