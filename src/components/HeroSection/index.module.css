@@ -1,0 +1,27 @@
+@keyframes slideX {
+    0% {
+        transform: translateX(-35px) translateY(-78px);
+    }
+    50% {
+        transform: translateX(-25px) translateY(-74px);
+        /*transform: translateX(-25px) translateY(-82px);*/
+    }
+    100% {
+        transform: translateX(-35px) translateY(-78px);
+    }
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero>svg {
+    animation: slideX 4s ease-in-out infinite;
+    position: absolute;
+}
+
+.hero div {
+    z-index: 9;
+}
+

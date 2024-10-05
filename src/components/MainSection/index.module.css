@@ -1,0 +1,82 @@
+.review--header {
+    position: relative;
+    overflow: hidden;
+}
+
+.review--header>svg {
+    position: absolute;
+    transform: translate(250px, -20px) rotate(30deg) ;
+    animation: slide 4s ease-in-out infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(250px, -25px) rotate(25deg);
+    }
+    50% {
+        transform: translate(255px, -20px) rotate(30deg);
+    }
+    100% {
+        transform: translate(250px, -25px) rotate(25deg);
+    }
+}
+
+.jump {
+    transition: transform .3s;
+    animation: jump ease-in-out 4s infinite;
+}
+
+.jump:hover {
+    animation: paused;
+    transform: scale(1.05) translateY(-5px);
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(-2px, -5px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -5px);
+    }
+    0% {
+        transform: translate(0px, 0px);
+    }
+}
+
+.category--box {
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+    background-color: #FFFFFF;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    height: 150px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);;
+}
+
+.category--box>img {
+    transition: transform .3s ease-in-out;
+}
+
+.category--box:hover {
+    transform: translate(0px, -5px);
+}
+
+.category--box:hover>img {
+    animation: float 2s infinite;
+}
