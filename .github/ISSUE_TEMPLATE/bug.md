@@ -1,7 +1,7 @@
 ---
 name: "🐞 Bug Report"
 about: "Create a report to help us improve"
-title: "[BUG] 제목을 입력하세요"
+title: "제목을 입력하세요"
 labels: "bug"
 assignees: ''
 ---
