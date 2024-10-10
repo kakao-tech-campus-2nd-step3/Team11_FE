@@ -27,7 +27,12 @@ export const Guideline = () => (
 );
 
 const GuidelineProgressBar: React.FC<PropH> = ({ h }) => (
-  <Box className={styles.guideline} h={h} bg={'#176CFF'} borderRadius={22}>
+  <Box
+    className={styles.guideline}
+    h={h}
+    bg={BoomerangColors.deepBlue}
+    borderRadius={22}
+  >
     <ProgressBg opacity={0.12} />
   </Box>
 );
@@ -35,7 +40,7 @@ const GuidelineProgressBar: React.FC<PropH> = ({ h }) => (
 const GuidelineSaveButton: React.FC<PropH> = ({ h }) => (
   <Button
     w={266}
-    bg={'#176CFF'}
+    bg={BoomerangColors.deepBlue}
     borderRadius={8}
     h={h}
     // TODO: transform 속성이 안먹힘
