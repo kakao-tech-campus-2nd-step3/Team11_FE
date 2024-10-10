@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 import { BoomerangColors } from '@/utils/colors';
 import { Box, Image, Text } from '@chakra-ui/react';
 
-export interface ICommunityBoardNavBox extends PropH {
+export interface ICommunityBoardNavBox {
   type: string;
   desc: string;
-  img: string;
+  img: any;
 }
 
 const convertBoardTypeToUri = (type: string): string => {
@@ -31,7 +31,7 @@ export const IndexCommunityBoardNavBox: React.FC = ({
   desc,
   img,
   h,
-}: ICommunityBoardNavBox) => (
+}: ICommunityBoardNavBox & PropH) => (
   <Link to={`community/${convertBoardTypeToUri(type)}`}>
     <Box w={230} h={h} bg={'#F3F3F3'} borderRadius={20} boxShadow="md">
       <Box bg={BoomerangColors.blue} h={26} borderTopRadius={20} mb="26px" />
