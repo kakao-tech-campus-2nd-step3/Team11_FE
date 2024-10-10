@@ -9,7 +9,7 @@ import House from '@images/house.svg?react';
 
 import styles from './index.module.css';
 
-export const CommunityHeader: React.FC<PropH> = ({ h }) => (
+export const IndexCommunityHeader: React.FC<PropH> = ({ h }) => (
   <Flex
     bg={BoomerangColors.blue}
     h={h}

@@ -1,9 +1,9 @@
-import { CommunityBanner } from '@components/CommunitySection/CommunityBanner';
+import { IndexCommunityBanner } from '@components/CommunitySection/IndexCommunityBanner';
 import {
-  CommunityBoardNavBox,
   ICommunityBoardNavBox,
-} from '@components/CommunitySection/CommunityBoardNavBox';
-import { CommunityHeader } from '@components/CommunitySection/CommunityHeader';
+  IndexCommunityBoardNavBox,
+} from '@components/CommunitySection/IndexCommunityBoardNavBox';
+import { IndexCommunityHeader } from '@components/CommunitySection/IndexCommunityHeader';
 import { PropH } from '@components/commons/types';
 
 import React from 'react';
@@ -40,11 +40,11 @@ const boards = [
 
 export const CommunitySection: React.FC<PropH> = ({ h }) => (
   <Box h={h} bg={BoomerangColors.white} borderRadius={20}>
-    <CommunityHeader h={75} />
-    <CommunityBanner h={250} />
+    <IndexCommunityHeader h={75} />
+    <IndexCommunityBanner h={250} />
     <Flex mt={35} pl={8} pr={8} justifyContent="space-between">
       {boards.map((board) => (
-        <CommunityBoardNavBox key={board.type} h={283} {...board} />
+        <IndexCommunityBoardNavBox key={board.type} h={283} {...board} />
       ))}
     </Flex>
   </Box>
