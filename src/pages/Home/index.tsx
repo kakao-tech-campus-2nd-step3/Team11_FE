@@ -6,7 +6,7 @@ import { BasicLayout } from '@components/commons/BasicLayout';
 
 import React from 'react';
 
-import { Box, Spacer, VStack } from '@chakra-ui/react';
+import { Spacer, VStack } from '@chakra-ui/react';
 
 export const Home: React.FC = () => {
   return (
