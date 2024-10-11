@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
 
 import { Community } from '@/pages/Community';
+import { DamagePrevention1 } from '@/pages/DamagePrevention1';
 import { Guideline } from '@/pages/Guideline';
 import { Home } from '@/pages/Home';
 
@@ -9,6 +10,7 @@ export const ROUTER_PATH = {
   ROOT: '/',
   USER: '/user',
   GUIDELINE: '/guideline',
+  PREVENT: '/prevent/:id',
   COMMUNITY: '/community/:type',
   NOT_FOUND: '*',
 } as const;
@@ -21,6 +23,7 @@ const PrivateRoute = (): React.ReactElement => {
 export const router = createBrowserRouter([
   { index: true, path: ROUTER_PATH.ROOT, element: <Home /> },
   { path: ROUTER_PATH.GUIDELINE, element: <Guideline /> },
+  { path: ROUTER_PATH.PREVENT, element: <DamagePrevention1 /> },
   { path: ROUTER_PATH.COMMUNITY, element: <Community /> },
   {
     element: <PrivateRoute />,
