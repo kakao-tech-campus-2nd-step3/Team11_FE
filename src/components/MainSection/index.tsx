@@ -22,7 +22,7 @@ const categories: ICategoryBox[] = [
     category: '전세 피해 예방',
     example: 'EX.) 집이 위험한지 검사해드릴게요',
     img: home,
-    path: '/probe',
+    path: '/prevent/1',
   },
   {
     category: '대처 가이드라인',
