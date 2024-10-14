@@ -1,3 +1,3 @@
 export interface PropH {
-  h: number;
+  h: number | 'max-content';
 }

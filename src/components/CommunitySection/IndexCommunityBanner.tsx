@@ -9,9 +9,9 @@ import Speaker from '@images/speaker.svg?react';
 
 import styles from './index.module.css';
 
-export const CommunityBanner: React.FC<PropH> = ({ h }) => (
+export const IndexCommunityBanner: React.FC<PropH> = ({ h }) => (
   <Flex
-    bg={'#176CFF'}
+    bg={BoomerangColors.deepBlue}
     h={h}
     pl={70}
     alignItems="center"
