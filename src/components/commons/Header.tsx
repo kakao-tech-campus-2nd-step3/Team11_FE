@@ -64,15 +64,19 @@ export const Header: React.FC<PropH> = ({ h }) => {
         >
           커뮤니티
         </Text>
-        <Text
-          w={102}
-          h={55}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
+        <a
+          href={'http://13.125.238.177:8080/api/v1/auth/login'}
         >
-          로그인
-        </Text>
+          <Text
+            w={102}
+            h={55}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            로그인
+          </Text>
+        </a>
       </Flex>
     </Box>
   );
