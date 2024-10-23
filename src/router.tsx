@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
 
-import { Community } from '@/pages/Community';
+import Community from '@/pages/Community';
 import { DamagePrevention1 } from '@/pages/DamagePrevention1';
 import { Guideline } from '@/pages/Guideline';
 import { Home } from '@/pages/Home';
