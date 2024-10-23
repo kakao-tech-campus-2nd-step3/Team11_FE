@@ -25,54 +25,22 @@ export const Header: React.FC<PropH> = ({ h }) => {
         <Image src={logo} alt="logo" w={132} h={27} ml={10} />
       </Link>
 
-      <Flex mr={2} color="#4D4D4D" fontSize={20} fontWeight="bold">
+      <Flex
+        mr={'37px'}
+        color="#4D4D4D"
+        fontSize={'20px'}
+        fontWeight={800}
+        gap={'70px'}
+      >
         <Link to={ROUTER_PATH.ROOT}>
-          <Text
-            w={99}
-            h={55}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-          >
-            홈
-          </Text>
+          <Text>홈</Text>
         </Link>
-        <Text
-          w={99}
-          h={55}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-        >
-          Q&As
-        </Text>
-        <Text
-          w={204}
-          h={55}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-        >
-          전문가와의 상담
-        </Text>
-        <Text
-          w={102}
-          h={55}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-        >
-          커뮤니티
-        </Text>
-        <Text
-          w={102}
-          h={55}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-        >
-          로그인
-        </Text>
+        <Text>Q&As</Text>
+        <Text>전문가와의 상담</Text>
+        <Text>커뮤니티</Text>
+        <a href={'http://13.125.238.177:8080/api/v1/auth/login'}>
+          <Text>로그인</Text>
+        </a>
       </Flex>
     </Box>
   );
