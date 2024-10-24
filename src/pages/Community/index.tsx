@@ -2,7 +2,9 @@ import { BasicLayout } from '@components/commons/BasicLayout';
 import { PropH } from '@components/commons/types';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+import { ROUTER_PATH } from '@/router';
 import { BoomerangColors } from '@/utils/colors';
 import { boards } from '@/utils/statics';
 import {
@@ -106,7 +108,20 @@ export const Community: React.FC = () => (
               </Text>
             </Box>
           ))}
-          <Button>게시글 작성하기</Button>
+          <Link>
+            <Text
+              fontWeight={700}
+              fontSize={18}
+              to={ROUTER_PATH.POSTING}
+              bg={BoomerangColors.deepBlue}
+              w={136}
+              h={10}
+              borderRadius={8}
+              color={BoomerangColors.white}
+            >
+              게시글 작성하기
+            </Text>
+          </Link>
           <Spacer />
           <Box>1/2/3/4/5/6</Box>
         </VStack>
