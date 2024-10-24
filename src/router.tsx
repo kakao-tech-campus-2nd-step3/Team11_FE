@@ -2,10 +2,11 @@ import React from 'react';
 import { Navigate, Outlet, createBrowserRouter } from 'react-router-dom';
 
 import { Community } from '@/pages/Community';
-import { Posting } from '@/pages/Community/Posting';
 import { DamagePrevention1 } from '@/pages/DamagePrevention1';
 import { Guideline } from '@/pages/Guideline';
 import { Home } from '@/pages/Home';
+import { CommunityPosting } from '@/templates/Community/CommunityPosting';
+import { CommunityViewer } from '@/templates/Community/CommunityViewer';
 
 export const ROUTER_PATH = {
   ROOT: '/',
@@ -26,8 +27,16 @@ export const router = createBrowserRouter([
   { index: true, path: ROUTER_PATH.ROOT, element: <Home /> },
   { path: ROUTER_PATH.GUIDELINE, element: <Guideline /> },
   { path: ROUTER_PATH.PREVENT, element: <DamagePrevention1 /> },
-  { path: ROUTER_PATH.POSTING, element: <Posting /> },
-  { path: ROUTER_PATH.COMMUNITY, element: <Community /> },
+  {
+    element: <Community />,
+    children: [
+      { path: ROUTER_PATH.POSTING, element: <CommunityPosting /> },
+      {
+        path: ROUTER_PATH.COMMUNITY,
+        element: <CommunityViewer />,
+      },
+    ],
+  },
   {
     element: <PrivateRoute />,
     children: [
