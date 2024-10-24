@@ -108,11 +108,10 @@ export const Community: React.FC = () => (
               </Text>
             </Box>
           ))}
-          <Link>
+          <Link to={ROUTER_PATH.POSTING}>
             <Text
               fontWeight={700}
               fontSize={18}
-              to={ROUTER_PATH.POSTING}
               bg={BoomerangColors.deepBlue}
               w={136}
               h={10}
