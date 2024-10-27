@@ -33,7 +33,13 @@ export const IndexCommunityBoardNavBox: React.FC = ({
   h,
 }: ICommunityBoardNavBox & PropH) => (
   <Link to={`community/${convertBoardTypeToUri(type)}`}>
-    <Box w={230} h={h} bg={'#F3F3F3'} borderRadius={20} boxShadow="md">
+    <Box
+      w={230}
+      h={h}
+      bg={BoomerangColors.calmWhite}
+      borderRadius={20}
+      boxShadow="md"
+    >
       <Box bg={BoomerangColors.blue} h={26} borderTopRadius={20} mb="26px" />
       <Box pl={7} pr={7}>
         <Text color={'#1C6BF5'} fontSize="22px" fontWeight={900}>

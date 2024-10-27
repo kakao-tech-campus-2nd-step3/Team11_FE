@@ -10,7 +10,7 @@ export const BasicLayout: React.FC<{
 }> = ({ children, maxW, bg = undefined }) => {
   const headerHeight = 55;
   return (
-    <Container maxW={maxW} p={0} pt={headerHeight} bg={bg}>
+    <Container maxW={maxW} minH={'100vh'} p={0} pt={headerHeight} bg={bg}>
       <Header h={headerHeight} />
       {children}
       {/*푸터*/}
