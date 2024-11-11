@@ -1,0 +1,80 @@
+.link-editor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    max-width: 400px;
+    width: 100%;
+    opacity: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 8px 8px;
+    transition: opacity 0.5s;
+    will-change: transform;
+}
+
+.link-editor .link-input {
+    display: block;
+    box-sizing: border-box;
+    margin: 8px 12px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    background-color: #eee;
+    font-size: 15px;
+    color: rgb(5, 5, 5);
+    border: 0;
+    outline: 0;
+    position: relative;
+    font-family: inherit;
+    min-width: 280px;
+    max-width: 390px;
+}
+
+.link-editor .link-input a {
+    color: rgb(33, 111, 219);
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 30px;
+    text-overflow: ellipsis;
+}
+
+.link-editor .link-input a:hover {
+    text-decoration: underline;
+}
+
+.link-editor .link-view {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 24px);
+    margin: 8px 12px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 15px;
+    color: rgb(5, 5, 5);
+    border: 0;
+    outline: 0;
+    position: relative;
+    font-family: inherit;
+}
+
+.link-editor .link-view a {
+    word-break: break-word;
+    color: #2f2ff2;
+    text-decoration: underline;
+}
+
+.link-editor button {
+    margin-right: 10px;
+    padding: 0 4px;
+    color: #888888;
+}
+
+.link-editor button:hover {
+    border-bottom: 2px solid black;
+    color: black;
+}

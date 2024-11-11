@@ -10,34 +10,14 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-import { Comment, CommentProps } from './Comment';
+import { CommentData } from '../CommunityBoard/types';
+import { Comment } from './Comment';
 
-const comments: CommentProps[] = [
-  {
-    content:
-      '공동유예 신청할때 같이 되나요? 사건번호가 같으면 다른아파트가 유예신청시 저희 것도 같이 되나요?',
-    author: '라이언',
-    location: '온천동/개인/다세대',
-    timestamp: '14분 전',
-    likes: 3,
-  },
-  {
-    content: '저도 같은 상황이에요.. 😢',
-    author: '라이언',
-    location: '온천동/개인/다세대',
-    timestamp: '10/09 19:07',
-    likes: 2,
-  },
-  {
-    content: '저도 궁금합니다!!! 알게되면 알려주세요!!',
-    author: '라이언',
-    location: '온천동/개인/다세대',
-    timestamp: '10/09 19:13',
-    likes: 1,
-  },
-];
+interface CommentSectionProps {
+  comments: CommentData[];
+}
 
-export const CommentSection: React.FC = () => (
+export const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => (
   <Box w="full" px={{ base: 5, md: 20 }} mt={7}>
     <Divider borderColor="blue.600" borderStyle="dashed" borderWidth="3px" />
     <Flex mt={8} ml={{ base: 2.5, md: 9 }} align="center" gap={2}>
@@ -69,8 +49,14 @@ export const CommentSection: React.FC = () => (
       </Button>
     </Flex>
     <VStack align="stretch" spacing={4} mt={9} bg="##EDEDED" p={5}>
-      {comments.map((comment, index) => (
-        <Comment key={index} {...comment} />
+      {comments.map((comment) => (
+        <Comment
+          key={comment.id}
+          content={comment.text}
+          author={comment.writer_name}
+          timestamp={comment.last_modified_at}
+          likes={0} // 좋아요 수는 API에서 받아오지 않는다면 기본값 사용
+        />
       ))}
     </VStack>
   </Box>

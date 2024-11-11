@@ -1,8 +1,12 @@
 import styles from '@components/CounsultationSection/index.module.css';
 
-import { useEffect } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 
-export const useIntersectionObserver = (imageRefs, threshold, rootMargin) => {
+export const useIntersectionObserver = (
+  imageRefs: MutableRefObject<(HTMLImageElement | HTMLButtonElement)[]>,
+  threshold: number,
+  rootMargin: string
+) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,12 +21,12 @@ export const useIntersectionObserver = (imageRefs, threshold, rootMargin) => {
       { threshold: threshold, rootMargin: rootMargin }
     );
 
-    imageRefs.current.forEach((img) => {
+    imageRefs.current.forEach((img: HTMLImageElement | HTMLButtonElement) => {
       if (img) observer.observe(img);
     });
 
     return () => {
-      imageRefs.current.forEach((img) => {
+      imageRefs.current.forEach((img: HTMLImageElement | HTMLButtonElement) => {
         if (img) observer.unobserve(img);
       });
     };

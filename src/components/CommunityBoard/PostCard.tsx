@@ -1,11 +1,11 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { ChatIcon, StarIcon } from '@chakra-ui/icons';
 import { Box, Flex, Icon, Text } from '@chakra-ui/react';
 
 interface PostCardProps {
-  postId: string;
+  postId: number;
   title: string;
   content: string;
   likes: number;
@@ -13,17 +13,16 @@ interface PostCardProps {
 }
 
 const PostCard: React.FC<PostCardProps> = ({
-  // postId,
+  postId,
   title,
   content,
   likes,
   comments,
 }) => {
   const navigate = useNavigate();
-  const { type } = useParams<{ type: string }>();
 
   const handleClick = () => {
-    navigate(`/community/${type}/post`);
+    navigate(`/community/post/${postId}`);
   };
 
   return (

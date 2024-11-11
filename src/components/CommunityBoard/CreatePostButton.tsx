@@ -1,12 +1,12 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { ROUTER_PATH } from '@/router';
+import { ROUTER_PATH } from '@/routerPath';
 import { Button } from '@chakra-ui/react';
 
 const CreatePostButton: React.FC = () => {
   const navigate = useNavigate();
-  const navigateToPosting = (e: MouseEvent) => navigate(ROUTER_PATH.POSTING);
+  const navigateToPosting = () => navigate(ROUTER_PATH.POSTING);
   return (
     <Button
       alignSelf="flex-end"

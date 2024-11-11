@@ -23,7 +23,6 @@ export const GuidelineNavHelp: React.FC<PropH> = ({ h }) => (
         그래도 잘 모르겠다면?
       </Text>
     </Flex>
-
     <VStack mt={'21px'} gap={'18px'}>
       <GuidelineBtn bg={'#176CFF'} icon={question}>
         전문가와 상담하러 가기

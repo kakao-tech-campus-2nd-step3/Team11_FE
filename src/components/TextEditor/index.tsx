@@ -1,70 +1,91 @@
-import { DropDown } from '@components/DropDown';
-import { DropDownItem } from '@components/DropDown/DropDownItem';
+import { EditorTheme } from '@components/TextEditor/Theme';
+import { ImageNode } from '@components/TextEditor/nodes/ImageNode';
+import { FloatingLinkEditorPlugin } from '@components/TextEditor/plugins/FloatingLinkEditorPlugin';
+import { HTMLPlugin } from '@components/TextEditor/plugins/HTMLPlugin';
+import { ImagePlugin } from '@components/TextEditor/plugins/ImagePlugin';
+import { ToolbarPlugin } from '@components/TextEditor/plugins/ToolbarPlugin';
 
-import React, { MouseEvent, ReactNode } from 'react';
+import React, { forwardRef, memo, useState } from 'react';
 
-import { BoomerangColors } from '@/utils/colors';
 import { Box } from '@chakra-ui/react';
+import { AutoLinkNode, LinkNode } from '@lexical/link';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
+import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 
-import styles from './index.module.css';
+import './index.css';
 
-const theme = {};
-
-const onError = (error) => {
+const onError = (error: Error) => {
   console.log(error);
 };
 
-export const TextEditor = () => {
-  const initialConfig = {
-    namespace: '',
-    theme,
-    onError,
+const initialConfig = {
+  namespace: 'boomerang',
+  theme: EditorTheme,
+  nodes: [AutoLinkNode, LinkNode, ImageNode],
+  onError,
+};
+
+const TextEditor: React.FC<{
+  forwardContent?: (content: string) => void;
+}> = ({ forwardContent }) => {
+  const [floatingAnchorElem, setFloatingAnchorElem] =
+    useState<HTMLDivElement | null>(null);
+  const [isLinkEditMode, setIsLinkEditMode] = useState<boolean>(false);
+
+  const onRef = (_floatingAnchorElem: HTMLDivElement) => {
+    if (_floatingAnchorElem !== null) {
+      setFloatingAnchorElem(_floatingAnchorElem);
+    }
   };
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <DropDown buttonLabel={'FONT STYLE'} className={styles.test}>
-        <DropDownItem onClick={() => console.log('TEST')}>
-          <span>TTTTTT1</span>
-        </DropDownItem>
-        <DropDownItem onClick={() => console.log('TEST2')}>
-          <span>TTTTTT2</span>
-        </DropDownItem>
-        <DropDownItem onClick={() => console.log('TEST3')}>
-          <span>TTTTTT3</span>
-        </DropDownItem>
-      </DropDown>
-      <EditorContainer>
-        <RichTextPlugin
-          contentEditable={
-            <ContentEditable className={styles.contentEditable} />
-          }
-          ErrorBoundary={LexicalErrorBoundary}
-          placeholder={<EditorPlaceholder />}
-        />
-        <HistoryPlugin />
-      </EditorContainer>
+      <div>
+        <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />
+        <EditorContainer ref={onRef}>
+          <RichTextPlugin
+            contentEditable={<ContentEditable className={'content-editable'} />}
+            ErrorBoundary={LexicalErrorBoundary}
+            placeholder={<EditorPlaceholder />}
+          />
+          {floatingAnchorElem && (
+            <FloatingLinkEditorPlugin
+              anchorElem={floatingAnchorElem}
+              isLinkEditMode={isLinkEditMode}
+              setIsLinkEditMode={setIsLinkEditMode}
+            />
+          )}
+          <LinkPlugin />
+          <ImagePlugin />
+          <HistoryPlugin />
+          {forwardContent && <HTMLPlugin forwardContent={forwardContent} />}
+        </EditorContainer>
+      </div>
     </LexicalComposer>
   );
 };
 
-const EditorContainer: React.FC<{ children: ReactNode }> = ({ children }) => {
+const EditorContainer = forwardRef<
+  HTMLDivElement,
+  { children: React.ReactNode }
+>(({ children }, ref) => {
   const [editor] = useLexicalComposerContext();
-  const onClick = (e: MouseEvent) => {
+
+  const onClick = () => {
     editor.focus();
   };
 
   return (
     <Box
+      ref={ref as React.Ref<HTMLDivElement>}
       minH={272}
-      bg={BoomerangColors.white}
-      borderRadius={15}
+      bg="white"
+      borderBottomRadius={15}
       p={10}
       pt={5}
       pb={5}
@@ -74,7 +95,7 @@ const EditorContainer: React.FC<{ children: ReactNode }> = ({ children }) => {
       {children}
     </Box>
   );
-};
+});
 
 const EditorPlaceholder: React.FC = () => {
   return (
@@ -83,3 +104,5 @@ const EditorPlaceholder: React.FC = () => {
     </Box>
   );
 };
+
+export default memo(TextEditor);

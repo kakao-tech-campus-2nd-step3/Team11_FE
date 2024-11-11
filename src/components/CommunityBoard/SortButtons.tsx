@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { BoomerangColors } from '@/utils/colors';
 import { Button, ButtonGroup } from '@chakra-ui/react';
 
 interface SortButtonProps {
@@ -13,11 +14,11 @@ const SortButton: React.FC<SortButtonProps> = ({ label, isActive }) => (
     py={3.5}
     borderRadius="3xl"
     fontWeight="bold"
-    bg={isActive ? 'blue.600' : 'blue.50'}
-    color={isActive ? 'white' : 'blue.500'}
-    borderColor="blue.500"
+    bg={isActive ? BoomerangColors.deepBlue : 'blue.50'}
+    color={isActive ? 'white' : BoomerangColors.deepBlue}
+    borderColor={BoomerangColors.deepBlue}
     borderWidth={isActive ? '0' : '2px'}
-    _hover={{ bg: isActive ? 'blue.500' : 'blue.100' }}
+    _hover={{ bg: isActive ? BoomerangColors.deepBlue : 'blue.100' }}
   >
     {label}
   </Button>

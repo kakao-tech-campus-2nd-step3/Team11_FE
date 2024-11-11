@@ -14,7 +14,7 @@ const useHotTopics = () => {
         const data = await fetchHotTopics();
         setHotTopics(data);
       } catch {
-        setError('Failed to fetch hot topics');
+        setError('핫토픽을 불러오는데 실패했습니다.');
       } finally {
         setLoading(false);
       }

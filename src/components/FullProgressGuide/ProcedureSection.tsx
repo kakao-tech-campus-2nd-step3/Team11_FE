@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { ProcedureItems } from '@/components/FullProgressGuide/ProcedureItems';
 import { Button, Flex, Image, Text, VStack } from '@chakra-ui/react';
 import papersIcon from '@images/papersIcon.svg';
-import { ProcedureItems } from '@/components/FullProgressGuide/ProcedureItems';
 
 export const ProcedureSection: React.FC = () => (
   <Flex
@@ -54,7 +54,6 @@ export const ProcedureSection: React.FC = () => (
         content="보증 이행 센터 방문..."
       />
     </VStack>
-
     <Button
       w="415px"
       h="113px"

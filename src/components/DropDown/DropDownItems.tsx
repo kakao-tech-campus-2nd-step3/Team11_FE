@@ -9,18 +9,18 @@ import React, {
   useState,
 } from 'react';
 
-import { Box, VStack } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
+
+import styles from './index.module.css';
 
 interface IDropDownItems {
   children: ReactNode;
   dropDownRef: React.Ref<HTMLDivElement>;
-  onClose: () => void;
 }
 
 export const DropDownItems: React.FC<IDropDownItems> = ({
   children,
   dropDownRef,
-  onClose,
 }) => {
   const [items, setItems] = useState<RefObject<HTMLButtonElement>[]>();
   const [cursor, setCursor] = useState<RefObject<HTMLButtonElement>>();
@@ -51,7 +51,7 @@ export const DropDownItems: React.FC<IDropDownItems> = ({
 
   return (
     <DropDownContext.Provider value={contextValue}>
-      <VStack ref={dropDownRef} position={'fixed'}>
+      <VStack ref={dropDownRef} className={styles.basicDropdownItems}>
         {children}
       </VStack>
     </DropDownContext.Provider>

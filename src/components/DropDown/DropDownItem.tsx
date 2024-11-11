@@ -2,8 +2,6 @@ import { DropDownContext } from '@components/DropDown/DropDownContext';
 
 import React, { ReactNode, useContext, useEffect, useRef } from 'react';
 
-import { Button } from '@chakra-ui/react';
-
 interface IDropDownItem {
   children: ReactNode;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -28,5 +26,5 @@ export const DropDownItem: React.FC<IDropDownItem> = ({
     }
   }, [ref, registerItem]);
 
-  return <Button onClick={onClick}>{children}</Button>;
+  return <button onClick={onClick}>{children}</button>;
 };

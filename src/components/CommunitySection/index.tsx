@@ -1,8 +1,5 @@
 import { IndexCommunityBanner } from '@components/CommunitySection/IndexCommunityBanner';
-import {
-  ICommunityBoardNavBox,
-  IndexCommunityBoardNavBox,
-} from '@components/CommunitySection/IndexCommunityBoardNavBox';
+import { IndexCommunityBoardNavBox } from '@components/CommunitySection/IndexCommunityBoardNavBox';
 import { IndexCommunityHeader } from '@components/CommunitySection/IndexCommunityHeader';
 import { PropH } from '@components/commons/types';
 

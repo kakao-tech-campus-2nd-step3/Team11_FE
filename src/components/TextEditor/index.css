@@ -1,0 +1,153 @@
+.content-editable {
+    outline: none;
+}
+
+.content-editable:focus {
+    outline: none;
+}
+
+
+.editor-text-bold {
+    font-weight: bold;
+}
+
+.editor-text-italic {
+    font-style: italic;
+}
+
+.editor-text-underline {
+    text-decoration: underline;
+}
+
+.editor-text-strikethrough {
+    text-decoration: line-through;
+}
+
+.editor-text-underlineStrikethrough {
+    text-decoration: underline line-through;
+}
+
+.editor-text-code {
+    background-color: rgb(240, 242, 245);
+    padding: 1px 0.25rem;
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 94%;
+}
+
+.editor-code {
+    background-color: rgb(240, 242, 245);
+    font-family: Menlo, Consolas, Monaco, monospace;
+    display: block;
+    padding: 8px 8px 8px 52px;
+    line-height: 1.53;
+    font-size: 13px;
+    margin: 8px 0;
+    tab-size: 2;
+    white-space: pre;
+    overflow-x: auto;
+    position: relative;
+}
+
+.editor-code:before {
+    content: attr(data-gutter);
+    position: absolute;
+    background-color: #eee;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #ccc;
+    padding: 8px;
+    color: #777;
+    white-space: pre-wrap;
+    text-align: right;
+    min-width: 25px;
+}
+
+.editor-code:after {
+    content: attr(data-highlight-language);
+    top: 2%;
+    right: 5px;
+    padding: 3px;
+    font-size: 10px;
+    text-transform: uppercase;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.editor-link {
+    color: rgb(33, 111, 219);
+    text-decoration: underline;
+}
+
+span.editor-image {
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    user-select: none;
+}
+
+.editor-image img {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.editor-image img.focused {
+    outline: 2px solid rgb(60, 132, 244);
+    user-select: none;
+}
+
+.editor-image .image-resizer {
+    display: block;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    background-color: rgb(60, 132, 244);
+    border: 1px solid #fff;
+}
+
+.editor-image .image-resizer.image-resizer-n {
+    top: -6px;
+    left: 48%;
+    cursor: n-resize;
+}
+
+.editor-image .image-resizer.image-resizer-ne {
+    top: -6px;
+    right: -6px;
+    cursor: ne-resize;
+}
+
+.editor-image .image-resizer.image-resizer-e {
+    bottom: 48%;
+    right: -6px;
+    cursor: e-resize;
+}
+
+.editor-image .image-resizer.image-resizer-se {
+    bottom: -2px;
+    right: -6px;
+    cursor: nwse-resize;
+}
+
+.editor-image .image-resizer.image-resizer-s {
+    bottom: -2px;
+    left: 48%;
+    cursor: s-resize;
+}
+
+.editor-image .image-resizer.image-resizer-sw {
+    bottom: -2px;
+    left: -6px;
+    cursor: sw-resize;
+}
+
+.editor-image .image-resizer.image-resizer-w {
+    bottom: 48%;
+    left: -6px;
+    cursor: w-resize;
+}
+
+.editor-image .image-resizer.image-resizer-nw {
+    top: -6px;
+    left: -6px;
+    cursor: nw-resize;
+}

@@ -10,13 +10,13 @@ interface ICard {
   className?: string;
 }
 
-export const Card: React.FC = ({
+export const Card: React.FC<ICard> = ({
   children,
   bg = 'white',
   h = 150,
   boxShadow = 'md',
   className = undefined,
-}: ICard) => (
+}) => (
   <Flex
     pl={10}
     pr={10}

@@ -1,5 +1,4 @@
 import ForumPostBoard from '@components/ForumPost/ForumPostBoard';
-import { BasicLayout } from '@components/commons/BasicLayout';
 
 import React from 'react';
 

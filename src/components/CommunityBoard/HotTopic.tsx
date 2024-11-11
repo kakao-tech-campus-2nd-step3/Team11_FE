@@ -7,7 +7,7 @@ interface HotTopicProps {
 }
 
 const HotTopic: React.FC<HotTopicProps> = ({ title }) => (
-  <Box px={3} py={3.5} bg="red.100" borderRadius="xl" mb={2}>
+  <Box px={3} py={3.5} bg="#FFDEDE" borderRadius="xl" mb={2}>
     <Text>🔥 {title}</Text>
   </Box>
 );

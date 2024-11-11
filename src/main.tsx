@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 
@@ -47,11 +47,13 @@ const theme = extendTheme({
 });
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={theme}>
+  // <StrictMode>
+  <QueryClientProvider client={queryClient}>
+    <ChakraProvider theme={theme}>
+      <Suspense fallback={<div>로딩중</div>}>
         <RouterProvider router={router} />
-      </ChakraProvider>
-    </QueryClientProvider>
-  </StrictMode>
+      </Suspense>
+    </ChakraProvider>
+  </QueryClientProvider>
+  // </StrictMode>
 );

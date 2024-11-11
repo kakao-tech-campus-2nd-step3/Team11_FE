@@ -8,7 +8,7 @@ import { Box } from '@chakra-ui/react';
 export const Survey: React.FC = () => {
   return (
     <BasicLayout maxW={1024}>
-      <Box bg="#FFF">
+      <Box bg="#FFF" borderRadius={30}>
         <BannerSection />
         <QuestionSection />
       </Box>

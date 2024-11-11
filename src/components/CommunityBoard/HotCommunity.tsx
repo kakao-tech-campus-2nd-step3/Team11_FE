@@ -13,11 +13,11 @@ const HotCommunity: React.FC = () => {
   if (error) return <Box>{error}</Box>;
 
   return (
-    <Box as="section" mt={10} w="729px">
-      <Text fontSize="3xl" fontWeight="extrabold" color="gray.800">
+    <Box as="section" mt={20} w="729px">
+      <Text fontSize="3xl" fontWeight="extrabold" color="#202020">
         🔥 지금 가장 핫한 커뮤니티
       </Text>
-      <Text mt={2} fontSize="lg" lineHeight="short" color="gray.500">
+      <Text mt={2} fontSize="lg" lineHeight="short" color="#878787">
         지금 커뮤니티에서 가장 뜨거운 토론이 벌어지고 있는 게시글이에요!
         <br />
         다양한 의견을 나누고, 당신의 생각도 함께 더해보세요!
@@ -28,7 +28,7 @@ const HotCommunity: React.FC = () => {
         mt={7}
         fontSize="xl"
         fontWeight="bold"
-        color="gray.700"
+        color="#363636"
       >
         {hotTopics.map((topic, index) => (
           <HotTopic key={index} title={topic.title} />

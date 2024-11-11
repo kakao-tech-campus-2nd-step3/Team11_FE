@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { GuidelineProgressBarProps } from '@/components/Guideline/GuidelineProgressBar';
 import { Box, Text } from '@chakra-ui/react';
 
 interface IPercentage {

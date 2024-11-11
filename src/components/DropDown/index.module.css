@@ -1,0 +1,24 @@
+.basic-dropdown {
+    background-color: #fff;
+}
+
+.basic-dropdown-items {
+    box-shadow: 0 12px 28px #0003, 0 2px 4px #0000001a, inset 0 0 0 1px #ffffff80;
+    border-radius: 8px;
+    min-height: 40px;
+    background-color: #fff;
+    position: fixed;
+    padding: 8px;
+}
+
+/*.basic-dropdown-item {*/
+/*    background-color: #fff;*/
+/*    min-width: 100px;*/
+/*    max-width: 250px;*/
+/*    border-radius: 8px;*/
+/*    padding: 8px;*/
+/*}*/
+
+/*.basic-dropdown-item:hover {*/
+/*    background-color: lightskyblue;*/
+/*}*/

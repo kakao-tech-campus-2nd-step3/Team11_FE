@@ -3,10 +3,9 @@ import React from 'react';
 import { StarIcon } from '@chakra-ui/icons';
 import { Box, Flex, Icon, Text } from '@chakra-ui/react';
 
-export interface CommentProps {
+interface CommentProps {
   content: string;
   author: string;
-  location: string;
   timestamp: string;
   likes: number;
 }
@@ -14,7 +13,6 @@ export interface CommentProps {
 export const Comment: React.FC<CommentProps> = ({
   content,
   author,
-  location,
   timestamp,
   likes,
 }) => (
@@ -29,7 +27,7 @@ export const Comment: React.FC<CommentProps> = ({
       </Flex>
     </Flex>
     <Text fontSize="sm" color="gray.500" mt={2}>
-      {author} / {location} {timestamp}
+      {author} {timestamp}
     </Text>
   </Box>
 );

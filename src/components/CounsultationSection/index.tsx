@@ -3,7 +3,9 @@ import { useIntersectionObserver } from '@hooks/useIntersectionObserver';
 import { PropH } from '@components/commons/types';
 
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { ROUTER_PATH } from '@/routerPath';
 import { BoomerangColors } from '@/utils/colors';
 import { Button, Image, Text, VStack } from '@chakra-ui/react';
 import consult1 from '@images/consult1.svg';
@@ -14,12 +16,13 @@ import consult4 from '@images/consult4.svg';
 import styles from './index.module.css';
 
 export const ConsultationSection: React.FC<PropH> = ({ h }) => {
-  const imageRefs = useRef<HTMLImageElement[]>([]);
+  const navigate = useNavigate();
+  const imageRefs = useRef<(HTMLImageElement | HTMLButtonElement)[]>([]);
 
   useIntersectionObserver(imageRefs, 0.5, '10% 0px -15% 0px');
 
   const setImageRefAtIndex =
-    (index: number) => (el: HTMLImageElement | null) => {
+    (index: number) => (el: HTMLImageElement | HTMLButtonElement | null) => {
       if (el) {
         imageRefs.current[index] = el;
       }
@@ -49,7 +52,11 @@ export const ConsultationSection: React.FC<PropH> = ({ h }) => {
       />
       <Image ref={setImageRefAtIndex(2)} alt="consultation3" src={consult3} />
       <Image ref={setImageRefAtIndex(3)} alt="consultation4" src={consult4} />
-      <Button ref={setImageRefAtIndex(4)} bg={BoomerangColors.blue}>
+      <Button
+        ref={setImageRefAtIndex(4)}
+        bg={BoomerangColors.blue}
+        onClick={() => navigate(ROUTER_PATH.CONSULTING)}
+      >
         <Text color={BoomerangColors.white} fontSize="24px">
           전문가와 상담해보기
         </Text>

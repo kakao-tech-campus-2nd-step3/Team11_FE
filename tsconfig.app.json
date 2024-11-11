@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "ES2021"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -32,5 +32,4 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["src", "eslint.config.js", "declaration.d.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
 }

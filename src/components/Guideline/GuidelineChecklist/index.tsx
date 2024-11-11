@@ -39,8 +39,8 @@ export const GuidelineChecklist: React.FC<IGuidelineChecklist> = ({
       <CheckListHeader />
       <Box>
         <Accordion allowMultiple variant="custom">
-          {subStepList.map((item, index) => (
-            <AccordionItem key={index}>
+          {subStepList.map((item) => (
+            <AccordionItem key={item.name}>
               <Flex>
                 <AccordionButton>
                   <AccordionIcon

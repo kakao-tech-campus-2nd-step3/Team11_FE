@@ -9,6 +9,7 @@
     "<THIRD_PARTY_MODULES>",
     "^[./]"
   ],
+  "endOfLine": "lf",
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "trailingComma": "es5",

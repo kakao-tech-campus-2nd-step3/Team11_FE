@@ -19,22 +19,11 @@ export const BannerSection: React.FC = () => (
         color="rgba(255,255,255,0.74)"
         fontSize="40px"
         fontWeight="bold"
-        lineHeight={'44px'}
+        lineHeight={'48px'}
       >
         반가워요!
         <br />
         <Text color="#FFF" as="span" position="relative">
-          <Flex gap={'27px'} position="absolute" right={2} top={-4}>
-            {Array.from({ length: 3 }, (_, index) => (
-              <Box
-                key={index}
-                bgColor="#FFF"
-                borderRadius={50}
-                width={'10px'}
-                height={'10px'}
-              />
-            ))}
-          </Flex>
           맞춤형 전세 보증금 반환 솔루션
         </Text>
         을 위한
@@ -45,6 +34,18 @@ export const BannerSection: React.FC = () => (
         최초 가입 시 1회 답변 필수입니다. 정확한 솔루션을 위해 답변
         부탁드릴게요!
       </Text>
+
+      <Flex gap={'27px'} position="absolute" right={2} top={-4}>
+        {Array.from({ length: 3 }, (_, index) => (
+          <Box
+            key={index}
+            bgColor="#FFF"
+            borderRadius={50}
+            width={'10px'}
+            height={'10px'}
+          />
+        ))}
+      </Flex>
     </VStack>
   </Flex>
 );

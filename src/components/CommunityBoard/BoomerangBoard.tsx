@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Box, Flex } from '@chakra-ui/react';
+import back from '@images/Comback2.svg';
 
 import MainContent from './MainContent';
 
@@ -17,10 +18,14 @@ const BoomerangBoard: React.FC = () => (
       flexDirection="column"
       alignItems="flex-start"
       maxW="full"
-      // borderRadius="3xl"
       bg="#F3F3F3"
       shadow="md"
-      w="945px"
+      w="945.46px"
+      h="1800px"
+      overflow="hidden"
+      backgroundImage={`url(${back})`}
+      backgroundSize="1004.23px 1606.92px"
+      backgroundRepeat="no-repeat"
     >
       <Box display="flex" flexDirection="column" w="full">
         <MainContent />

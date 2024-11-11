@@ -1,8 +1,18 @@
-import { TextEditor } from '@components/TextEditor';
+import { useCommunityPostMutation } from '@apis/community';
 
-import React, { Fragment } from 'react';
+import TextEditor from '@components/TextEditor';
+import {
+  PostDataContext,
+  PostDataContextType,
+} from '@components/TextEditor/PostDataContext';
+
+import React, { ChangeEvent, useCallback, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import {
+  createPostContent,
+  flushImagePreviewUrls,
+} from '@/templates/Community/utils';
 import { BoomerangColors } from '@/utils/colors';
 import {
   Box,
@@ -16,9 +26,49 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
+const boardType = {
+  ENTIRE: 0,
+  SECRETE: 1,
+  LOCATION: 2,
+  STEP: 3,
+} as const;
+
+type BoardType = (typeof boardType)[keyof typeof boardType];
+
+const isBoardType = (value: number): value is BoardType => {
+  return Object.values(boardType).some((r) => r === value);
+};
+
+export type CommunityPostData = {
+  title: string;
+  content: string;
+  boardType: BoardType;
+  location?: string;
+};
+
 export const CommunityPosting: React.FC = () => {
+  const [postData, setPostData] = useState<CommunityPostData>(() => ({
+    title: '',
+    content: '',
+    boardType: boardType.ENTIRE,
+    location: undefined,
+  }));
+  const setContent = useCallback(
+    (newContent: string) =>
+      setPostData((prev) => ({
+        ...prev,
+        content: newContent,
+      })),
+    [setPostData]
+  );
+
   return (
-    <Fragment>
+    <PostDataContext.Provider
+      value={{
+        postData: postData,
+        setPostData: setPostData,
+      }}
+    >
       <Container bg={'#EDEDED'} maxW={1024} p={1} borderBottomRadius={20}>
         <VStack
           spacing={8}
@@ -31,76 +81,171 @@ export const CommunityPosting: React.FC = () => {
           <PostingHookButtons />
           <PostingTitleInput />
           <PostingCategorySelection />
-          <TextEditor />
+          <TextEditor forwardContent={setContent} />
         </VStack>
         <PostingRules />
       </Container>
       <Box h={'50px'} />
-    </Fragment>
+    </PostDataContext.Provider>
   );
 };
 
-const PostingHookButtons = () => (
-  <Flex justifyContent={'space-between'}>
-    <HStack spacing={3}>
-      <Link to={'-1'}>
-        <Text color={BoomerangColors.deepBlue} fontSize={27} fontWeight={900}>
-          {'<'}
+const PostingHookButtons = () => {
+  const postDataContext: PostDataContextType | null =
+    useContext(PostDataContext);
+  const { mutate } = useCommunityPostMutation();
+  const onClick = () => {
+    if (!postDataContext) {
+      return;
+    }
+
+    const { postData } = postDataContext;
+    const { content, title, boardType, location } = postData;
+    const { updatedContent, images } = createPostContent(content);
+
+    mutate({
+      content: updatedContent,
+      title: title,
+      boardType: boardType,
+      location: location,
+      images: images,
+    });
+
+    flushImagePreviewUrls();
+  };
+
+  return (
+    <Flex justifyContent={'space-between'}>
+      <HStack spacing={3}>
+        <Link to={'-1'}>
+          <Text color={BoomerangColors.deepBlue} fontSize={27} fontWeight={900}>
+            {'<'}
+          </Text>
+        </Link>
+        <Text color={BoomerangColors.deepBlue} fontWeight={900} fontSize={27}>
+          자유게시판
         </Text>
-      </Link>
-      <Text color={BoomerangColors.deepBlue} fontWeight={900} fontSize={27}>
-        자유게시판
-      </Text>
-      <Text color={BoomerangColors.deepBlue} fontWeight={700} fontSize={14}>
-        ●
-      </Text>
-      <Text color={BoomerangColors.deepBlue} fontWeight={700} fontSize={20}>
-        게시글 작성하기
-      </Text>
-    </HStack>
-    <Button bg={BoomerangColors.deepBlue} w={105} h={45}>
-      <Text color={BoomerangColors.white} fontSize={20} fontWeight={700}>
-        작성 완료
-      </Text>
-    </Button>
-  </Flex>
-);
+        <Text color={BoomerangColors.deepBlue} fontWeight={700} fontSize={14}>
+          ●
+        </Text>
+        <Text color={BoomerangColors.deepBlue} fontWeight={700} fontSize={20}>
+          게시글 작성하기
+        </Text>
+      </HStack>
+      <Button
+        bg={BoomerangColors.deepBlue}
+        w={105}
+        h={45}
+        _hover={{}}
+        onClick={onClick}
+      >
+        <Text color={BoomerangColors.white} fontSize={20} fontWeight={700}>
+          작성 완료
+        </Text>
+      </Button>
+    </Flex>
+  );
+};
 
-const PostingTitleInput = () => (
-  <Input
-    fontWeight={900}
-    fontSize={24}
-    _placeholder={{
-      color: BoomerangColors.deepBlue,
-      opacity: 0.3,
-    }}
-    _hover={{
-      border: '',
-    }}
-    border={'none'}
-    pt={8}
-    pb={8}
-    pl={10}
-    borderRadius={0}
-    placeholder="제목을 작성해주세요."
-    borderBottom={'2px solid #7FADFF'}
-  />
-);
+const PostingTitleInput = () => {
+  const postDataContext: PostDataContextType | null =
+    useContext(PostDataContext);
 
-const PostingCategorySelection = () => (
-  <Select
-    borderRadius={0}
-    h={75}
-    fontSize={24}
-    color={BoomerangColors.white}
-    bg={BoomerangColors.deepBlue}
-  >
-    <option value={'자유 게시판'}>게시판 유형 - 자유 게시판</option>
-    <option value={'지역 게시판'}>게시판 유형 - 지역 게시판</option>
-    <option value={'비밀 게시판'}>게시판 유형 - 비밀 게시판</option>
-    <option value={'단계별 게시판'}>게시판 유형 - 단계별 게시판</option>
-  </Select>
-);
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!postDataContext) {
+      return;
+    }
+
+    const { setPostData } = postDataContext;
+    const newTitle = e.target.value;
+    setPostData((prev: CommunityPostData) => ({
+      ...prev,
+      title: newTitle,
+    }));
+  };
+  return (
+    <Input
+      fontWeight={900}
+      fontSize={24}
+      onChange={onChange}
+      _placeholder={{
+        color: BoomerangColors.deepBlue,
+        opacity: 0.3,
+      }}
+      _hover={{
+        border: '',
+      }}
+      outline={'none'}
+      border={'none'}
+      pt={8}
+      pb={8}
+      pl={10}
+      borderRadius={0}
+      placeholder="제목을 작성해주세요."
+      borderBottom={'2px solid #7FADFF'}
+    />
+  );
+};
+
+const categories = [
+  { name: '게시판 유형 - 자유 게시판', value: boardType.ENTIRE },
+  {
+    name: '게시판 유형 - 지역 게시판',
+    value: boardType.LOCATION,
+  },
+  {
+    name: '게시판 유형 - 비밀 게시판',
+    value: boardType.SECRETE,
+  },
+  {
+    name: '게시판 유형 - 단계별 게시판',
+    value: boardType.STEP,
+  },
+];
+
+const PostingCategorySelection = () => {
+  const postDataContext: PostDataContextType | null =
+    useContext(PostDataContext);
+
+  const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    if (!postDataContext) {
+      return;
+    }
+
+    const { setPostData } = postDataContext;
+
+    const newBoardType = parseInt(e.target.value);
+    if (isBoardType(newBoardType)) {
+      setPostData((prev: CommunityPostData) => ({
+        ...prev,
+        boardType: newBoardType,
+      }));
+    }
+  };
+
+  return (
+    <Select
+      borderRadius={0}
+      h={75}
+      fontSize={24}
+      color={BoomerangColors.white}
+      bg={BoomerangColors.deepBlue}
+      onChange={onChange}
+    >
+      {categories.map((item) => (
+        <option
+          style={{
+            color: 'black',
+          }}
+          value={item.value}
+          key={item.value}
+        >
+          {item.name}
+        </option>
+      ))}
+    </Select>
+  );
+};
 
 const PostingRules = () => (
   <Box

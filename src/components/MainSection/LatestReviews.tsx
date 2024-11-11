@@ -9,7 +9,7 @@ import pen from '@images/pen.svg';
 
 import styles from './index.module.css';
 
-export const LatestReviews: React.FC = ({ flex, children }: IFlexBox) => (
+export const LatestReviews: React.FC<IFlexBox> = ({ flex, children }) => (
   <Box
     flex={flex}
     ml={25}
