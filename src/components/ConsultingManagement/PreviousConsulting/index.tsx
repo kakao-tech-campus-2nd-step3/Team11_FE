@@ -18,25 +18,25 @@ import {
 
 const previousConsultingList: ConsultingInfoItem[] = [
   {
-    consultation_date_time: '24/10/22 오후 3시~ 오후 4시',
-    mentor_nick_name: '김땡땡',
-    consultation_status: 'PENDING',
+    consultation_date_time: '2024/11/01 오후 2시~ 오후 3시',
+    mentor_nick_name: '홍길동',
+    consultation_status: 'FINISHED',
     content:
-      '주택 전세사기를 당했어요... 주택 전세사기를 당했어요...주택 전세사기를 당했어요...주택 전세사기를 당했어요...',
+      '주택 전세보증금을 돌려받지 못했습니다. 현재 상황에서 법적 조언이 필요하며, 대응 방안을 알고 싶습니다.',
   },
   {
-    consultation_date_time: '24/10/22 오후 3시~ 오후 4시',
-    mentor_nick_name: '김땡땡',
-    consultation_status: 'PENDING',
+    consultation_date_time: '2024/11/02 오전 10시~ 오전 11시',
+    mentor_nick_name: '박민수',
+    consultation_status: 'FINISHED',
     content:
-      '주택 전세사기를 당했어요... 주택 전세사기를 당했어요...주택 전세사기를 당했어요...주택 전세사기를 당했어요...',
+      '상가 임대차 계약서와 관련된 문제로 분쟁이 발생했습니다. 현재 어떻게 해결할 수 있을지 자문이 필요합니다.',
   },
   {
-    consultation_date_time: '24/10/22 오후 3시~ 오후 4시',
-    mentor_nick_name: '김땡땡',
-    consultation_status: 'PENDING',
+    consultation_date_time: '2024/11/03 오후 4시~ 오후 5시',
+    mentor_nick_name: '이영희',
+    consultation_status: 'FINISHED',
     content:
-      '주택 전세사기를 당했어요... 주택 전세사기를 당했어요...주택 전세사기를 당했어요...주택 전세사기를 당했어요...',
+      '임대 계약 해지와 관련된 문제가 발생했습니다. 임대인과의 협의가 어려운 상황이라 도움을 받고 싶습니다.',
   },
 ];
 
